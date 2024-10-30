@@ -104,7 +104,8 @@ console.log(anotherUpper); // upper will be 'HELLO:)'
  * const anotherRepeated = repeatString("Goodbye", 2); // anotherRepeated will be "Goodbye Goodbye"
  */
 function repeatString(str, times) {
-    return str.repeat(times)
+    const withSpace = str + " "
+    return withSpace.repeat(times - 1) + str
 }
 
 
