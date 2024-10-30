@@ -76,8 +76,14 @@ console.log(harborContainsBa)
  * const result = sumOfDigitsWithPosition(52); // result will be 5^1 + 2^2 = 5 + (2 * 2) = 5 + 4 = 9
  */
 function sumOfDigitsWithPosition(num) {
-
+    let sum = 0;
+    while (num != 0) {
+        sum = sum + num % 10;
+        num = parseInt(num / 10);
+    }
+    return sum;
 }
+
 
 
 

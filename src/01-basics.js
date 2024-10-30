@@ -105,8 +105,6 @@ console.log(anotherUpper); // upper will be 'HELLO:)'
  */
 function repeatString(str, times) {
     return str.repeat(times)
-
-
 }
 
 

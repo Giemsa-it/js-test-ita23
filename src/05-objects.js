@@ -66,8 +66,14 @@ console.log(john); // Outputs { name: 'John Doe', age: 30 }
  * // totalAge will be 55
  */
 function getTotalAge(persons) {
+    let total = 0;
+    for (let i = 0; i < persons.length; i++) {
+        total = total + persons[i].age;
+    }
+    return total;
 }
-
+const totalAge = getTotalAge([{ name: 'John Doe', age: 30 }, { name: 'Jane Doe', age: 25 }]);
+console.log(totalAge)
 
 /**
  * This function checks for duplicate email addresses in an array of users.
