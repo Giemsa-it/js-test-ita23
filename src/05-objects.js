@@ -8,9 +8,15 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-
+    const person = {
+        name: "John Doe",
+        age: 30,
+        city: "New York"
+    }
+    return person
 }
-
+const person = createPersonObject();
+console.log(person)
 
 /**
  * This function returns the name of the given person object.
@@ -23,7 +29,7 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    return person.name
 }
 
 
@@ -39,10 +45,15 @@ function getPersonName(person) {
  * console.log(john); // Outputs { name: 'John Doe', age: 30 }
  *
  */
-function findPersonByName(persons, name) {
 
+/* function findPersonByName(persons, name) {
+    if (persons.includes(name) === true){
+        return persons.find(name)
+    }
 }
-
+const john = findPersonByName([{ name: 'John Doe', age: 30 }, { name: 'Jane Doe', age: 25 }], 'John Doe');
+console.log(john); // Outputs { name: 'John Doe', age: 30 }
+ */
 
 /**
  * This function calculates the total age of all persons in an array.
@@ -55,7 +66,6 @@ function findPersonByName(persons, name) {
  * // totalAge will be 55
  */
 function getTotalAge(persons) {
-
 }
 
 
@@ -74,5 +84,14 @@ function getTotalAge(persons) {
  * const hasDuplicates = checkForDuplicateEmails(users); // true
  */
 function checkForDuplicateEmails(users) {
-
+    let hasDuplicates = users.map(v => v.name).length > new Set(users.map(v => v.name)).size ? true : false;
+    return hasDuplicates;
 }
+
+const users = [
+    { email: 'alice@example.com' },
+    { email: 'bob@example.com' },
+    { email: 'alice@example.com' }
+];
+const hasDuplicates = checkForDuplicateEmails(users); // true
+console.log(hasDuplicates)

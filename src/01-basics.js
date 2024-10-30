@@ -8,8 +8,11 @@
  * console.log(coolestTeacher); // Benjamin
  */
 function getCoolestTeacher() {
-    
+    const bestTeacher = "Benjamin"
+    return bestTeacher
 }
+const coolestTeacher = getCoolestTeacher();
+console.log(coolestTeacher); // Benjamin
 
 /**
  * This function multiplies two numbers and then adds a third number.
@@ -24,8 +27,12 @@ function getCoolestTeacher() {
  * const anotherResult = multiplyAndAdd(-1, 1, 2); // anotherResult will be 1
  */
 function multiplyAndAdd(a, b, c) {
-
+    return (a*b) + c
 }
+
+const total = multiplyAndAdd(2, 3, 1); // result will be 7
+const anotherResult = multiplyAndAdd(-1, 1, 2); // anotherResult will be 1
+console.log(total)
 
 /**
  * This function returns the type of the provided variable.
@@ -38,8 +45,12 @@ function multiplyAndAdd(a, b, c) {
  * const anotherResult = determineType(42); // anotherResult will be "number"
  */
 function determineType(value) {
-
+    const type = typeof value
+    return type
 }
+
+const result = determineType("Hello"); // result will be "string"
+console.log(result)
 
 /**
  * This function concatenates two strings with a space in between.
@@ -53,9 +64,11 @@ function determineType(value) {
  */
 
 function concatenateStringsWithSpace(a, b) {
-
+    const combine = a + " " + b
+    return combine
 }
-
+const both = concatenateStringsWithSpace("Hello", "World"); // result will be "Hello World"
+console.log(both)
 
 /**
  * This function converts a string to uppercase and adds a smiley at the end of the string
@@ -71,13 +84,18 @@ function concatenateStringsWithSpace(a, b) {
  */
 
 function toUpperCaseWithSmiley(str) {
-
+    const toUpper = str.toUpperCase()
+    return toUpper + ":)"
 }
+const upper = toUpperCaseWithSmiley('hello');
+const anotherUpper = toUpperCaseWithSmiley('world');
+console.log(upper)
+console.log(anotherUpper); // upper will be 'HELLO:)'
 
 /**
  * This function repeats a string a specified number of times with spaces in between.
  *
- * @param {string} str - The string to repeat.
+ * @param {string}   str - The string to repeat.
  * @param {number} times - The number of times to repeat the string.
  * @returns {string} - The repeated string with spaces in between.
  *
@@ -86,6 +104,12 @@ function toUpperCaseWithSmiley(str) {
  * const anotherRepeated = repeatString("Goodbye", 2); // anotherRepeated will be "Goodbye Goodbye"
  */
 function repeatString(str, times) {
+    return str.repeat(times)
+
 
 }
 
+
+
+const repeated = repeatString("Hello", 3); // repeated will be "Hello Hello Hello"
+console.log(repeated)

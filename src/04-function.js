@@ -9,8 +9,11 @@
  * const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
  */
 function generateMessage(name, age) {
-
+    return `Hey ${name}, happy ${age} birthday!`
 }
+const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
+console.log(message)
+
 
 /**
  * This function capitalizes the first letter of every word in a sentence.
@@ -22,8 +25,15 @@ function generateMessage(name, age) {
  * const title = titleCase("hello world"); // title will be "Hello World"
  */
 function titleCase(sentence) {
-
+    const splitStr = sentence.toLowerCase().split(' ');
+    for (let i = 0; i < splitStr.length; i++) {
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(' ');
 }
+
+const title = titleCase("Hello world"); // title will be "Hello World"
+console.log(title)
 
 /**
  * This function returns the sum of a range of numbers in an array.
@@ -36,8 +46,18 @@ function titleCase(sentence) {
  * const sum = sumOfRange(1, 4); // sum will be 10
  */
 function sumOfRange(start, end) {
+    const arr = Array.from({length: end - start + 1}, (_, a) => a + start);
+    let sum = 0;
 
+// iterate over each item in the array
+    for (let i = 0; i < arr.length; i++ ) {
+        sum += arr[i];
+    }
+    return sum
 }
+const sumRange = sumOfRange(1, 4); // sum will be 10
+console.log(sumRange)
+
 
 
 /**
@@ -52,7 +72,21 @@ function sumOfRange(start, end) {
  */
 function generateAcronym(sentence) {
 
+
+    let acronym = '';
+    const strArr = sentence.split(' ');
+
+    strArr.forEach(words => {
+        const [char] = words;
+        if(char === char.toUpperCase() && char !== char.toLowerCase()){
+            acronym += char;
+        };
+    });
+    return acronym;
 }
+
+
+
 
 
 /**
@@ -65,6 +99,4 @@ function generateAcronym(sentence) {
  * const consonantCount = countConsonantsWeighted("Hello World!"); // consonantCount will be 9
  * const anotherCount = countConsonantsWeighted("JavaScript"); // anotherCount will be 9
  */
-function countConsonantsWeighted(str) {
-
-}
+function countConsonantsWeighted(str) {}
